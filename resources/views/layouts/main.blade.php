@@ -13,17 +13,18 @@
 </head>
 <body>
 
+    <div class="global-content d-flex flex-column">
 
-    @include('partials.header')
-
-
-    <main>
-
-        @yield('content')
+        @include('partials.header')
 
 
-    </main>
+        <main>
 
+            @yield('content')
+
+        </main>
+
+    </div>
 
 </body>
 </html>

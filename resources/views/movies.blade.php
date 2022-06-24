@@ -1,26 +1,27 @@
 @extends('layouts.main')
 
-@section('title', 'Movies');
+@section('title', 'Movies')
 
 @section('content')
-    <h1>Movies</h1>
 
-    <ul class="list-group">
+
+    <div class="movies">
+
         @foreach ($movies as $movie)
-
-            <li class="list-group-item">
-                <div><span>Id: </span>{{$movie->id}}</div>
-                <div class="list-title"><span>Titolo: </span>{{$movie->title}}</div>
-                <div><span>Titolo originale: </span>{{$movie->original_title}}</div>
-                <div><span>Nazionalità: </span>{{$movie->nationality}}</div>
-                <div><span>Data: </span>{{$movie->date}}</div>
-                <div><span>Voto: </span>{{$movie->vote}}</div>
-            </li>
-
+        <div class="card">
+            <a href="#">
+              <div class="img1"><img class="img-fluid" src="{{$movie->poster}}" alt="{{$movie->title}}"></div>
+              <div class="img2"></div>
+              <div class="title">{{$movie->title}}</div>
+              <div class="text">{{$movie->original_title}}</div>
+              <a href="#"><div class="catagory">Film <i class="fas fa-film"></i></div></a>
+              <a href="#"><div class="views">{{$movie->vote}}  <i class="far fa-eye"></i> </div></a>
+            </a>
+        </div>
         @endforeach
 
-    </ul>
 
+    </div>
 
 
 @endsection
